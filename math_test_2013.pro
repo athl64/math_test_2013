@@ -25,3 +25,6 @@ FORMS    += mainwindow.ui \
     var1.ui \
     var2.ui \
     help.ui
+
+RESOURCES += \
+    images.qrc
