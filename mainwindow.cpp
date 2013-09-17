@@ -31,7 +31,7 @@ void MainWindow::start_test()
     this->hide();
     int c = 0;
     srand(time(0));//important for random number
-    c=rand() %2;
+    c=rand() %7;
     qDebug()<<"randoom is "<<c;
 
     QFile file("log.txt");
@@ -44,6 +44,11 @@ void MainWindow::start_test()
     switch (c) {
         case 0: {v1 = new var1(this); v1->show(); return;}
         case 1: {v2 = new var2(this); v2->show(); return;}
+        case 2: {v3 = new var3(this); v3->show(); return;}
+        case 3: {v4 = new var4(this); v4->show(); return;}
+        case 4: {v5 = new var5(this); v5->show(); return;}
+        case 5: {v6 = new var6(this); v6->show(); return;}
+        case 6: {v7 = new var7(this); v7->show(); return;}
     }
 
 }

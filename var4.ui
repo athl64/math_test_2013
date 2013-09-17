@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>var2</class>
- <widget class="QDialog" name="var2">
+ <class>var4</class>
+ <widget class="QDialog" name="var4">
   <property name="geometry">
    <rect>
     <x>0</x>
@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>v2</string>
+   <string>Dialog</string>
   </property>
   <widget class="QLabel" name="label_6">
    <property name="geometry">

@@ -1,5 +1,5 @@
-#include "var2.h"
-#include "ui_var2.h"
+#include "var7.h"
+#include "ui_var7.h"
 #include <QDebug>
 #include <QFile>
 #include <QDateTime>
@@ -7,9 +7,9 @@
 int mark = 0;
 int tasks[7];
 
-var2::var2(QWidget *parent) :
+var7::var7(QWidget *parent) :
     QDialog(parent),
-    ui(new Ui::var2)
+    ui(new Ui::var7)
 {
     ui->setupUi(this);
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(show_help()));
@@ -22,18 +22,18 @@ var2::var2(QWidget *parent) :
     ui->pushButton_3->setVisible(false);
 }
 
-var2::~var2()
+var7::~var7()
 {
     delete ui;
 }
 
-void var2::show_help()
+void var7::show_help()
 {
     h = new help(this);
     h->show();
 }
 
-void var2::check()
+void var7::check()
 {
     mark = 0;
     for(int ii=0;ii<=6;ii++) {
@@ -76,7 +76,7 @@ void var2::check()
     show_result();
 }
 
-void var2::show_result()
+void var7::show_result()
 {
     ui->pushButton_3->setVisible(true);
     ui->pushButton_2->setVisible(false);

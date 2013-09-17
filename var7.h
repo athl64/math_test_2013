@@ -1,21 +1,21 @@
-#ifndef VAR2_H
-#define VAR2_H
+#ifndef VAR7_H
+#define VAR7_H
 
 #include <QDialog>
 #include "help.h"
 
 namespace Ui {
-class var2;
+class var7;
 }
 
-class var2 : public QDialog
+class var7 : public QDialog
 {
     Q_OBJECT
     help* h;
     
 public:
-    explicit var2(QWidget *parent = 0);
-    ~var2();
+    explicit var7(QWidget *parent = 0);
+    ~var7();
     
 public slots:
     void show_help();
@@ -23,7 +23,7 @@ public slots:
     void show_result();
 
 private:
-    Ui::var2 *ui;
+    Ui::var7 *ui;
 };
 
-#endif // VAR2_H
+#endif // VAR7_H
