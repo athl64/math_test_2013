@@ -69,7 +69,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>а) 3x²-5x+2=0</string>
+    <string>а) 3x²+7x+2=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_39">
@@ -241,7 +241,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>г) 12x²-5x-2=0</string>
+    <string>г) 4x²+3x-10=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_12">
@@ -366,7 +366,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Одне з натуральних чисел на 3 більше за друге. Знайти ці числа, якщо їх добуток 130.</string>
+    <string>Одне з натуральних чисел на 6 більше за друге. Знайти ці числа, якщо їх добуток 112.</string>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -541,7 +541,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>б) 5x²-x+1=0</string>
+    <string>б) x²-12x+36=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_38">
@@ -706,7 +706,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>б) (3x-5)²=10x+9</string>
+    <string>б) (3x-4)(5x-2)=(5x-2)²</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_42">
@@ -901,7 +901,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>в) x²+10x+25=0</string>
+    <string>в) 2x²-3x+7=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_27">
@@ -954,7 +954,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>а) 4х(х-1)=3</string>
+    <string>а) (x-3)²=2(x+1)</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_14">
@@ -1063,6 +1063,83 @@
     <string>Перевірити</string>
    </property>
   </widget>
+  <zorder>groupBox_3</zorder>
+  <zorder>groupBox_2</zorder>
+  <zorder>groupBox</zorder>
+  <zorder>label_6</zorder>
+  <zorder>label_16</zorder>
+  <zorder>lineEdit_20</zorder>
+  <zorder>lineEdit_26</zorder>
+  <zorder>label_2</zorder>
+  <zorder>lineEdit_39</zorder>
+  <zorder>label_9</zorder>
+  <zorder>lineEdit_28</zorder>
+  <zorder>label_17</zorder>
+  <zorder>lineEdit_7</zorder>
+  <zorder>label_21</zorder>
+  <zorder>lcdNumber</zorder>
+  <zorder>label_28</zorder>
+  <zorder>label_23</zorder>
+  <zorder>lineEdit_32</zorder>
+  <zorder>lineEdit_33</zorder>
+  <zorder>lineEdit_16</zorder>
+  <zorder>label_15</zorder>
+  <zorder>lineEdit_12</zorder>
+  <zorder>lineEdit_30</zorder>
+  <zorder>lineEdit_21</zorder>
+  <zorder>lineEdit_3</zorder>
+  <zorder>lineEdit_17</zorder>
+  <zorder>pushButton_3</zorder>
+  <zorder>radioButton_6</zorder>
+  <zorder>pushButton</zorder>
+  <zorder>lineEdit</zorder>
+  <zorder>radioButton_5</zorder>
+  <zorder>label_27</zorder>
+  <zorder>lineEdit_11</zorder>
+  <zorder>label_14</zorder>
+  <zorder>label_10</zorder>
+  <zorder>lineEdit_36</zorder>
+  <zorder>label_7</zorder>
+  <zorder>lineEdit_38</zorder>
+  <zorder>lineEdit_8</zorder>
+  <zorder>lineEdit_22</zorder>
+  <zorder>lineEdit_13</zorder>
+  <zorder>label_8</zorder>
+  <zorder>lineEdit_41</zorder>
+  <zorder>lineEdit_19</zorder>
+  <zorder>lineEdit_9</zorder>
+  <zorder>lineEdit_15</zorder>
+  <zorder>lineEdit_37</zorder>
+  <zorder>lineEdit_25</zorder>
+  <zorder>label_25</zorder>
+  <zorder>label_20</zorder>
+  <zorder>label_5</zorder>
+  <zorder>label_24</zorder>
+  <zorder>lineEdit_42</zorder>
+  <zorder>label_13</zorder>
+  <zorder>label_4</zorder>
+  <zorder>label_22</zorder>
+  <zorder>label_3</zorder>
+  <zorder>lineEdit_6</zorder>
+  <zorder>label_18</zorder>
+  <zorder>lineEdit_29</zorder>
+  <zorder>lineEdit_40</zorder>
+  <zorder>label_11</zorder>
+  <zorder>lineEdit_27</zorder>
+  <zorder>lineEdit_34</zorder>
+  <zorder>lineEdit_31</zorder>
+  <zorder>lineEdit_24</zorder>
+  <zorder>label_19</zorder>
+  <zorder>lineEdit_14</zorder>
+  <zorder>label_12</zorder>
+  <zorder>lineEdit_23</zorder>
+  <zorder>lineEdit_35</zorder>
+  <zorder>lineEdit_2</zorder>
+  <zorder>lineEdit_5</zorder>
+  <zorder>lineEdit_4</zorder>
+  <zorder>lineEdit_18</zorder>
+  <zorder>lineEdit_10</zorder>
+  <zorder>pushButton_2</zorder>
  </widget>
  <resources/>
  <connections/>
