@@ -69,7 +69,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>а) 3x²-5x+2=0</string>
+    <string>а) 4x²-20x+25=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_39">
@@ -241,7 +241,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>г) 12x²-5x-2=0</string>
+    <string>г) 2x²-5x-3=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_12">
@@ -366,7 +366,7 @@
     </rect>
    </property>
    <property name="title">
-    <string>Одне з натуральних чисел на 3 більше за друге. Знайти ці числа, якщо їх добуток 130.</string>
+    <string>Одне з натуральних чисел на 6 більше за друге. Знайти ці числа, якщо їх добуток 187.</string>
    </property>
    <property name="flat">
     <bool>false</bool>
@@ -541,7 +541,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>б) 5x²-x+1=0</string>
+    <string>б) 7x²-20x+12=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_38">
@@ -706,7 +706,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>б) (3x-5)²=10x+9</string>
+    <string>б) 3(x+4)²=10x+32</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_42">
@@ -901,7 +901,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>в) x²+10x+25=0</string>
+    <string>в) 4x²+4x+3=0</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_27">
@@ -954,7 +954,7 @@
     </rect>
    </property>
    <property name="text">
-    <string>а) 4х(х-1)=3</string>
+    <string>а) 2x(x+2)=(x-2)(4-x)</string>
    </property>
   </widget>
   <widget class="QLineEdit" name="lineEdit_14">
