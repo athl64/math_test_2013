@@ -1,6 +1,6 @@
 math_test_2013
 ==============
-meths tests for school - quadratic equations (for Ukraine);
+maths tests for school - quadratic equations (for Ukraine);
 
 first, showing start window with name of tests and help button;
 help button present on each test window of start page and variant;
