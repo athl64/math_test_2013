@@ -1,7 +1,7 @@
 #ifndef VAR3_H
 #define VAR3_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 #include "help.h"
 
 namespace Ui {

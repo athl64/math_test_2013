@@ -1,7 +1,7 @@
 #ifndef VAR4_H
 #define VAR4_H
 
-#include <QDialog>
+#include <QtWidgets/QDialog>
 #include "help.h"
 
 namespace Ui {
