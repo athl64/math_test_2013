@@ -13,6 +13,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(start_test()));
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(show_help()));
+
+    show_NameForm();
 }
 
 MainWindow::~MainWindow()
@@ -37,9 +39,15 @@ void MainWindow::start_test()
     QFile file("log.txt");
     QTextStream stream(&file);
     QDateTime now = QDateTime::currentDateTime();
-    file.open(QIODevice::Append | QIODevice::Text);
-    stream<<"\n--------------------------------------start\nstart - "<<now.toString()<<"\nvariant - "<<c+1<<"\n";
-    file.close();
+    if(file.open(QIODevice::Append | QIODevice::Text))
+    {
+        stream<<"\n--------------------------------------start\nstart - "<<now.toString()<<"\nvariant - "<<c+1<<"\n";
+        file.close();
+    }
+    else
+    {
+        qDebug() << "cant open/create file\n";
+    }
 
     switch (c) {
         case 0: {v1 = new var1(this); v1->show(); return;}
@@ -51,4 +59,10 @@ void MainWindow::start_test()
         case 6: {v7 = new var7(this); v7->show(); return;}
     }
 
+}
+
+void MainWindow::show_NameForm()
+{
+    nameForm = new NameForm(this);
+    nameForm->show();
 }

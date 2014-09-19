@@ -19,7 +19,8 @@ SOURCES += main.cpp\
     var4.cpp \
     var5.cpp \
     var6.cpp \
-    var7.cpp
+    var7.cpp \
+    nameform.cpp
 
 HEADERS  += mainwindow.h \
     var1.h \
@@ -29,7 +30,8 @@ HEADERS  += mainwindow.h \
     var4.h \
     var5.h \
     var6.h \
-    var7.h
+    var7.h \
+    nameform.h
 
 FORMS    += mainwindow.ui \
     var1.ui \
@@ -39,7 +41,10 @@ FORMS    += mainwindow.ui \
     var4.ui \
     var5.ui \
     var6.ui \
-    var7.ui
+    var7.ui \
+    nameform.ui
 
 RESOURCES += \
     images.qrc
+
+RC_ICONS = app_icon.ico

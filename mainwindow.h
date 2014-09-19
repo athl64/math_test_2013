@@ -10,6 +10,7 @@
 #include "var6.h"
 #include "var7.h"
 #include "help.h"
+#include "nameform.h"
 
 namespace Ui {
 class MainWindow;
@@ -26,6 +27,7 @@ class MainWindow : public QMainWindow
     var6* v6;
     var7* v7;
     help* h;
+    NameForm* nameForm;
     
 public:
     explicit MainWindow(QWidget *parent = 0);
@@ -34,6 +36,7 @@ public:
 public slots:
     void show_help();
     void start_test();
+    void show_NameForm();
     
 private:
     Ui::MainWindow *ui;
