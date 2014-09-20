@@ -11,6 +11,8 @@
 #include "var7.h"
 #include "help.h"
 #include "nameform.h"
+#include <QtNetwork/QTcpSocket>
+#include <QtNetwork/QAbstractSocket>
 
 namespace Ui {
 class MainWindow;
@@ -37,7 +39,17 @@ public slots:
     void show_help();
     void start_test();
     void show_NameForm();
+
+    //network
+public slots:
+    void Connected();
+    void ReadyRead();
+    void SendToServer();
+    void err();
     
+private:
+    QTcpSocket *client;
+
 private:
     Ui::MainWindow *ui;
 };

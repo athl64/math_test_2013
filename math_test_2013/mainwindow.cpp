@@ -15,6 +15,15 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(show_help()));
 
     show_NameForm();
+
+    //init network part
+    client = new QTcpSocket(this);
+
+    connect(client,SIGNAL(connected()),this,SLOT(Connected()));
+    connect(client,SIGNAL(readyRead()),this,SLOT(ReadyRead()));
+    connect(client,SIGNAL(error(QAbstractSocket::SocketError)),this,SLOT(err()));
+
+    client->connectToHost("127.0.0.1",4455);
 }
 
 MainWindow::~MainWindow()
@@ -65,4 +74,28 @@ void MainWindow::show_NameForm()
 {
     nameForm = new NameForm(this);
     nameForm->show();
+}
+
+void MainWindow::Connected()
+{
+    qDebug() << "connected\n";
+    client->write("hello from test prog");
+}
+
+void MainWindow::ReadyRead()
+{
+    qDebug() << "readyRead\n";
+    QString receivedStr(client->readAll());
+    ui->textBrowser->append(receivedStr);
+    client->close();
+}
+
+void MainWindow::SendToServer()
+{
+    client->write("GET / HTTP/1.1\r\n\r\n");
+}
+
+void MainWindow::err()
+{
+    qDebug() << "error\n" << client->errorString();
 }
