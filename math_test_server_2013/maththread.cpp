@@ -43,7 +43,7 @@ void mathThread::readyRead()
     received = sock->readAll();
     sock->write(sent);
 
-    sock->close();
+    //sock->close();
 
     qDebug() << "received from client: " << received;
 }

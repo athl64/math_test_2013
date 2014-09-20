@@ -7,32 +7,47 @@
     <x>0</x>
     <y>0</y>
     <width>914</width>
-    <height>497</height>
+    <height>501</height>
    </rect>
   </property>
   <property name="windowTitle">
-   <string>MainWindow</string>
+   <string>Сервер результатів</string>
   </property>
   <widget class="QWidget" name="centralWidget">
-   <widget class="QTextBrowser" name="textBrowser">
+   <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
      <rect>
       <x>0</x>
       <y>0</y>
-      <width>681</width>
-      <height>441</height>
+      <width>911</width>
+      <height>461</height>
      </rect>
     </property>
-   </widget>
-   <widget class="QTextBrowser" name="textBrowser_2">
-    <property name="geometry">
-     <rect>
-      <x>690</x>
-      <y>0</y>
-      <width>221</width>
-      <height>441</height>
-     </rect>
-    </property>
+    <column>
+     <property name="text">
+      <string>Учень</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Час початку</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Час закінчення</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Стан</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
+      <string>Оцінка</string>
+     </property>
+    </column>
    </widget>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>

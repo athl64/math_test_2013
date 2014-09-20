@@ -43,6 +43,7 @@ void MainWindow::start_test()
     int c = 0;
     srand(time(0));//important for random number
     c=rand() %7;
+    variant = c;
     qDebug()<<"randoom is "<<c;
 
     QFile file("log.txt");
@@ -57,6 +58,9 @@ void MainWindow::start_test()
     {
         qDebug() << "cant open/create file\n";
     }
+
+    //try to send variant number
+    SendToServer();
 
     switch (c) {
         case 0: {v1 = new var1(this); v1->show(); return;}
@@ -79,7 +83,14 @@ void MainWindow::show_NameForm()
 void MainWindow::Connected()
 {
     qDebug() << "connected\n";
+    sockConnected = true;
     client->write("hello from test prog");
+}
+
+void MainWindow::Disconnected()
+{
+    qDebug() << "disconnected\n";
+    sockConnected = false;
 }
 
 void MainWindow::ReadyRead()
@@ -87,15 +98,37 @@ void MainWindow::ReadyRead()
     qDebug() << "readyRead\n";
     QString receivedStr(client->readAll());
     ui->textBrowser->append(receivedStr);
-    client->close();
+    //client->close();
 }
 
 void MainWindow::SendToServer()
 {
-    client->write("GET / HTTP/1.1\r\n\r\n");
+    do
+    {
+        if(getSockState())
+        {
+            qDebug() << "send\n";
+            QByteArray tmp;
+            tmp.clear();
+            tmp.append(QString::number(variant));
+            client->write(tmp);
+            qDebug() << "sent array content: " << tmp;
+        }
+        else
+        {
+            qDebug() << "sleep\n";
+            Sleep(3000);
+        }
+    }
+    while(!getSockState());
 }
 
 void MainWindow::err()
 {
     qDebug() << "error\n" << client->errorString();
+}
+
+bool MainWindow::getSockState()
+{
+    return sockConnected;
 }

@@ -13,6 +13,7 @@
 #include "nameform.h"
 #include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QAbstractSocket>
+#include "windows.h"
 
 namespace Ui {
 class MainWindow;
@@ -43,12 +44,16 @@ public slots:
     //network
 public slots:
     void Connected();
+    void Disconnected();
     void ReadyRead();
     void SendToServer();
     void err();
+    bool getSockState();
     
 private:
     QTcpSocket *client;
+    bool sockConnected;
+    int variant;
 
 private:
     Ui::MainWindow *ui;
