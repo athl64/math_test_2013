@@ -60,7 +60,10 @@ void MainWindow::start_test()
     }
 
     //try to send variant number
-    SendToServer();
+    SendToServer(QString::number(c));
+    SendToServer("name: " + bank.getData().name);
+    SendToServer("surname: " + bank.getData().surname);
+    SendToServer("clas: " + bank.getData().clas);
 
     switch (c) {
         case 0: {v1 = new var1(this); v1->show(); return;}
@@ -101,7 +104,7 @@ void MainWindow::ReadyRead()
     //client->close();
 }
 
-void MainWindow::SendToServer()
+void MainWindow::SendToServer(QString in)
 {
     do
     {
@@ -110,8 +113,9 @@ void MainWindow::SendToServer()
             qDebug() << "send\n";
             QByteArray tmp;
             tmp.clear();
-            tmp.append(QString::number(variant));
+            tmp.append(in);
             client->write(tmp);
+            client->flush();
             qDebug() << "sent array content: " << tmp;
         }
         else

@@ -17,6 +17,8 @@ NameForm::~NameForm()
 
 bool NameForm::checkInput()
 {
+    bank.setData(ui->lineEdit->text(),ui->lineEdit_2->text(),ui->lineEdit_3->text());
+
     //debug plug
     this->close();
 

@@ -14,6 +14,8 @@
 #include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QAbstractSocket>
 #include "windows.h"
+#include "sharebank.h"
+#include "shareStruct.h"
 
 namespace Ui {
 class MainWindow;
@@ -46,7 +48,7 @@ public slots:
     void Connected();
     void Disconnected();
     void ReadyRead();
-    void SendToServer();
+    void SendToServer(QString in);
     void err();
     bool getSockState();
     
@@ -54,6 +56,7 @@ private:
     QTcpSocket *client;
     bool sockConnected;
     int variant;
+    shareBank bank;
 
 private:
     Ui::MainWindow *ui;

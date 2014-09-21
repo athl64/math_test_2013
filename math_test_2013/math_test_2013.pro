@@ -20,7 +20,8 @@ SOURCES += main.cpp\
     var5.cpp \
     var6.cpp \
     var7.cpp \
-    nameform.cpp
+    nameform.cpp \
+    sharebank.cpp
 
 HEADERS  += mainwindow.h \
     var1.h \
@@ -31,7 +32,9 @@ HEADERS  += mainwindow.h \
     var5.h \
     var6.h \
     var7.h \
-    nameform.h
+    nameform.h \
+    sharebank.h \
+    shareStruct.h
 
 FORMS    += mainwindow.ui \
     var1.ui \

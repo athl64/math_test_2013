@@ -2,6 +2,8 @@
 #define NAMEFORM_H
 
 #include <QDialog>
+#include "sharebank.h"
+#include "shareStruct.h"
 
 namespace Ui {
 class NameForm;
@@ -20,6 +22,9 @@ private:
 
 public slots:
     bool checkInput();
+
+private:
+    shareBank bank;
 };
 
 #endif // NAMEFORM_H
