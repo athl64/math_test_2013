@@ -19,6 +19,7 @@ SOURCES += main.cpp\
 
 HEADERS  += mainwindow.h \
     maththread.h \
-    mathserver.h
+    mathserver.h \
+    shareStruct.h
 
 FORMS    += mainwindow.ui

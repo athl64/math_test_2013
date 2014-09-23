@@ -51,6 +51,7 @@ public slots:
     void SendToServer(QString in);
     void err();
     bool getSockState();
+    void transmitMark();
     
 private:
     QTcpSocket *client;

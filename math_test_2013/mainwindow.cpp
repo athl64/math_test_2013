@@ -60,10 +60,13 @@ void MainWindow::start_test()
     }
 
     //try to send variant number
-    SendToServer(QString::number(c));
-    SendToServer("name: " + bank.getData().name);
-    SendToServer("surname: " + bank.getData().surname);
-    SendToServer("clas: " + bank.getData().clas);
+    QString tmpText("");
+    tmpText.append("<variant>" + QString::number(c) + "</variant>\n");
+    tmpText.append("<name>" + bank.getData().name + "</name>\n");
+    tmpText.append("<surname>" + bank.getData().surname + "</surname>\n");
+    tmpText.append("<clas>" + bank.getData().clas + "</clas>\n");
+    tmpText.append("<started>" + QDateTime::currentDateTime().toString("dd.MM.yyyy hh:mm:ss") + "</started>\n");
+    SendToServer(tmpText);
 
     switch (c) {
         case 0: {v1 = new var1(this); v1->show(); return;}
@@ -135,4 +138,10 @@ void MainWindow::err()
 bool MainWindow::getSockState()
 {
     return sockConnected;
+}
+
+void MainWindow::transmitMark()
+{
+    SendToServer("<mark>" + QString::number(bank.getMark()) + "</mark>\n");
+    SendToServer("<finished>" + QDateTime::currentDateTime().toString("dd.MM.yyyy hh:mm:ss") + "</finished>\n");
 }

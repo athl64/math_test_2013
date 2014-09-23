@@ -15,6 +15,9 @@ var2::var2(QWidget *parent) :
     connect(ui->pushButton, SIGNAL(clicked()), this, SLOT(show_help()));
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(check()));
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(close()));
+    //
+    connect(ui->pushButton_3,SIGNAL(clicked()),parent,SLOT(show()));
+    connect(this,SIGNAL(markIsReady()),parent,SLOT(transmitMark()));
 
     ui->lcdNumber->setVisible(false);
     ui->label_27->setVisible(false);
@@ -130,4 +133,7 @@ void var2::show_result()
     stream<<"baliv nabrano - "<<mark2<<"\n";
     stream<<"end - "<<now.toString()<<"\n--------------------------------------end\n";
     file.close();
+
+    bank.setMark(mark2);
+    emit markIsReady();
 }

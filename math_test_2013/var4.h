@@ -3,6 +3,7 @@
 
 #include <QtWidgets/QDialog>
 #include "help.h"
+#include "sharebank.h"
 
 namespace Ui {
 class var4;
@@ -24,6 +25,12 @@ public slots:
 
 private:
     Ui::var4 *ui;
+
+signals:
+    void markIsReady();
+
+private:
+    shareBank bank;
 };
 
 #endif // VAR4_H

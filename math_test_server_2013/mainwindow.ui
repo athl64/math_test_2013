@@ -30,6 +30,11 @@
     </column>
     <column>
      <property name="text">
+      <string>Клас</string>
+     </property>
+    </column>
+    <column>
+     <property name="text">
       <string>Час початку</string>
      </property>
     </column>
