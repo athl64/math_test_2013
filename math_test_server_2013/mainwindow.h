@@ -22,6 +22,7 @@ private:
 public slots:
     int insertRow(QString name, QString surname, QString clas, QString start);//return inserted row number
     void setRowData(int rowNum, QString mark, QString finish);//add data to exist row
+    void testInsert();
 
 };
 

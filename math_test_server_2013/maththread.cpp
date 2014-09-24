@@ -4,6 +4,13 @@ mathThread::mathThread(int descriptor, QObject *parent) :
     QThread(parent)
 {
     this->sd = descriptor;
+
+    rowPos = -1;
+}
+
+mathThread::~mathThread()
+{
+
 }
 
 void mathThread::run()
@@ -19,6 +26,10 @@ void mathThread::run()
     connect(sock,SIGNAL(connected()),this,SLOT(connected()),Qt::DirectConnection);
     connect(sock,SIGNAL(disconnected()),this,SLOT(disconnected()),Qt::DirectConnection);
     connect(sock,SIGNAL(readyRead()),this,SLOT(readyRead()),Qt::DirectConnection);
+
+    //
+    connect(this,SIGNAL(signalFirst(QString,QString,QString,QString)),parent()->parent(),SLOT(insertRow(QString,QString,QString,QString)));
+    connect(this,SIGNAL(signalSecond(int,QString,QString)),parent()->parent(),SLOT(setRowData(int,QString,QString)));
 
     exec();
 }
@@ -42,6 +53,18 @@ void mathThread::readyRead()
 
     received = sock->readAll();
     sock->write(sent);
+
+    //
+    rowPos = 0;//temp plug
+    bank.filter(received);
+    if(bank.getName() != "" && bank.getSurname() != "" && bank.getClas() != "" && bank.getStarted() != "" && bank.getFinished() == "" && bank.getMark() == "")
+    {
+        emit signalFirst(bank.getName(),bank.getSurname(),bank.getClas(),bank.getStarted());
+    }
+    else if(bank.getFinished() != "" && bank.getMark() != "")
+    {
+        emit signalSecond(rowPos,bank.getMark(),bank.getFinished());
+    }
 
     //sock->close();
 

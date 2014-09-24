@@ -7,10 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
-    mathServer *server = new mathServer;
+    mathServer *server = new mathServer(this);
     server->startListen();
-
-    insertRow("maxim","galich","12-j","now");
 }
 
 MainWindow::~MainWindow()
@@ -38,4 +36,9 @@ void MainWindow::setRowData(int rowNum, QString mark, QString finish)
     ui->tableWidget->setItem(rowNum,5,new QTableWidgetItem(mark));
     ui->tableWidget->setItem(rowNum,3,new QTableWidgetItem(finish));
     ui->tableWidget->setItem(rowNum,4,new QTableWidgetItem("Завершено"));
+}
+
+void MainWindow::testInsert()
+{
+    insertRow("maxim2","galich1","12-h","now1");
 }

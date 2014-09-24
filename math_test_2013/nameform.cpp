@@ -17,10 +17,20 @@ NameForm::~NameForm()
 
 bool NameForm::checkInput()
 {
-    bank.setData(ui->lineEdit->text(),ui->lineEdit_2->text(),ui->lineEdit_3->text());
+    if(ui->lineEdit->text() != "" && ui->lineEdit_2->text() != "" && ui->lineEdit_3->text() != "")
+    {
+        bank.setData(ui->lineEdit->text(),ui->lineEdit_2->text(),ui->lineEdit_3->text());
+        this->close();
+    }
+    else
+    {
+        QMessageBox info;
+        info.setText("Перевірте щоб всі поля були заповнені правильно!");
+        info.exec();
+    }
 
     //debug plug
-    this->close();
+    //this->close();
 
     return 0;
 }

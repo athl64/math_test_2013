@@ -90,7 +90,7 @@ void MainWindow::Connected()
 {
     qDebug() << "connected\n";
     sockConnected = true;
-    client->write("hello from test prog");
+    //client->write("hello from test prog");
 }
 
 void MainWindow::Disconnected()
@@ -103,7 +103,6 @@ void MainWindow::ReadyRead()
 {
     qDebug() << "readyRead\n";
     QString receivedStr(client->readAll());
-    ui->textBrowser->append(receivedStr);
     //client->close();
 }
 

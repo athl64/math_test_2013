@@ -15,11 +15,13 @@ TEMPLATE = app
 SOURCES += main.cpp\
         mainwindow.cpp \
     maththread.cpp \
-    mathserver.cpp
+    mathserver.cpp \
+    sharebank.cpp
 
 HEADERS  += mainwindow.h \
     maththread.h \
     mathserver.h \
-    shareStruct.h
+    shareStruct.h \
+    sharebank.h
 
 FORMS    += mainwindow.ui

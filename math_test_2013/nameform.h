@@ -2,6 +2,7 @@
 #define NAMEFORM_H
 
 #include <QDialog>
+#include <QMessageBox>
 #include "sharebank.h"
 #include "shareStruct.h"
 
