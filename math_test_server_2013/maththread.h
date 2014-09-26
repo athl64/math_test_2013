@@ -4,6 +4,8 @@
 #include <QThread>
 #include <QTcpSocket>
 #include "sharebank.h"
+#include "shareid.h"
+#include "QUuid"
 
 class mathThread : public QThread
 {
@@ -15,7 +17,7 @@ public:
 
 signals:
     void sockError(QTcpSocket::SocketError);
-    void signalFirst(QString,QString,QString,QString);
+    void signalFirst(QString,QString,QString,QString,QString);
     void signalSecond(int,QString,QString);
 
 public slots:
@@ -28,6 +30,8 @@ private:
     int sd;
     int rowPos;
     shareBank bank;
+    shareId id;
+    QUuid guid;
 };
 
 #endif // MATHTHREAD_H

@@ -16,12 +16,13 @@ SOURCES += main.cpp\
         mainwindow.cpp \
     maththread.cpp \
     mathserver.cpp \
-    sharebank.cpp
+    sharebank.cpp \
+    shareid.cpp
 
 HEADERS  += mainwindow.h \
     maththread.h \
     mathserver.h \
-    shareStruct.h \
-    sharebank.h
+    sharebank.h \
+    shareid.h
 
 FORMS    += mainwindow.ui

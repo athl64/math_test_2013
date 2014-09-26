@@ -6,6 +6,8 @@ mathThread::mathThread(int descriptor, QObject *parent) :
     this->sd = descriptor;
 
     rowPos = -1;
+    guid = QUuid::createUuid();
+    //qDebug() << "guid: " << guid.toString();
 }
 
 mathThread::~mathThread()
@@ -28,7 +30,7 @@ void mathThread::run()
     connect(sock,SIGNAL(readyRead()),this,SLOT(readyRead()),Qt::DirectConnection);
 
     //
-    connect(this,SIGNAL(signalFirst(QString,QString,QString,QString)),parent()->parent(),SLOT(insertRow(QString,QString,QString,QString)));
+    connect(this,SIGNAL(signalFirst(QString,QString,QString,QString,QString)),parent()->parent(),SLOT(insertRow(QString,QString,QString,QString,QString)));
     connect(this,SIGNAL(signalSecond(int,QString,QString)),parent()->parent(),SLOT(setRowData(int,QString,QString)));
 
     exec();
@@ -55,14 +57,14 @@ void mathThread::readyRead()
     sock->write(sent);
 
     //
-    rowPos = 0;//temp plug
     bank.filter(received);
     if(bank.getName() != "" && bank.getSurname() != "" && bank.getClas() != "" && bank.getStarted() != "" && bank.getFinished() == "" && bank.getMark() == "")
     {
-        emit signalFirst(bank.getName(),bank.getSurname(),bank.getClas(),bank.getStarted());
+        emit signalFirst(bank.getName(),bank.getSurname(),bank.getClas(),bank.getStarted(),guid.toString());
     }
     else if(bank.getFinished() != "" && bank.getMark() != "")
     {
+        rowPos = id.getIdByGuid(guid.toString());
         emit signalSecond(rowPos,bank.getMark(),bank.getFinished());
     }
 

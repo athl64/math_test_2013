@@ -16,7 +16,7 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-int MainWindow::insertRow(QString name, QString surname, QString clas, QString start)
+int MainWindow::insertRow(QString name, QString surname, QString clas, QString start, QString guid)
 {
     ui->tableWidget->insertRow(ui->tableWidget->rowCount());
 
@@ -27,6 +27,7 @@ int MainWindow::insertRow(QString name, QString surname, QString clas, QString s
     ui->tableWidget->setItem(currentRow,1,new QTableWidgetItem(clas));
     ui->tableWidget->setItem(currentRow,2,new QTableWidgetItem(start));
     ui->tableWidget->setItem(currentRow,4,new QTableWidgetItem("Тестування"));
+    id.insertVal(guid,currentRow);
 
     return currentRow;
 }
@@ -40,5 +41,5 @@ void MainWindow::setRowData(int rowNum, QString mark, QString finish)
 
 void MainWindow::testInsert()
 {
-    insertRow("maxim2","galich1","12-h","now1");
+    insertRow("maxim2","galich1","12-h","now1","guid shorter then need");
 }

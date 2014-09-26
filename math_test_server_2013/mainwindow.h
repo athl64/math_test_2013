@@ -3,6 +3,7 @@
 
 #include <QMainWindow>
 #include "mathserver.h"
+#include "shareid.h"
 
 namespace Ui {
 class MainWindow;
@@ -19,8 +20,10 @@ public:
 private:
     Ui::MainWindow *ui;
 
+    shareId id;
+
 public slots:
-    int insertRow(QString name, QString surname, QString clas, QString start);//return inserted row number
+    int insertRow(QString name, QString surname, QString clas, QString start, QString guid);//return inserted row number
     void setRowData(int rowNum, QString mark, QString finish);//add data to exist row
     void testInsert();
 
