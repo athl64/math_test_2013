@@ -7,6 +7,8 @@ MainWindow::MainWindow(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    initTableSize();
+
     mathServer *server = new mathServer(this);
     server->startListen();
 }
@@ -42,4 +44,11 @@ void MainWindow::setRowData(int rowNum, QString mark, QString finish)
 void MainWindow::testInsert()
 {
     insertRow("maxim2","galich1","12-h","now1","guid shorter then need");
+}
+
+void MainWindow::initTableSize()
+{
+    ui->tableWidget->horizontalHeader()->resizeSection(0,300);
+    ui->tableWidget->horizontalHeader()->resizeSection(2,140);
+    ui->tableWidget->horizontalHeader()->resizeSection(3,140);
 }

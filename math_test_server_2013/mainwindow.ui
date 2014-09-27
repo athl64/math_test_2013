@@ -13,6 +13,10 @@
   <property name="windowTitle">
    <string>Сервер результатів</string>
   </property>
+  <property name="windowIcon">
+   <iconset resource="mathServResources.qrc">
+    <normaloff>:/new/icons/app_serv_icon.ico</normaloff>:/new/icons/app_serv_icon.ico</iconset>
+  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="QTableWidget" name="tableWidget">
     <property name="geometry">
@@ -58,6 +62,8 @@
   <widget class="QStatusBar" name="statusBar"/>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
- <resources/>
+ <resources>
+  <include location="mathServResources.qrc"/>
+ </resources>
  <connections/>
 </ui>

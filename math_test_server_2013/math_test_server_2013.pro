@@ -26,3 +26,8 @@ HEADERS  += mainwindow.h \
     shareid.h
 
 FORMS    += mainwindow.ui
+
+RESOURCES += \
+    mathServResources.qrc
+
+RC_ICONS = app_serv_icon.ico

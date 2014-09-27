@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>v1</string>
+   <string>Тести: квадратні рівняння</string>
   </property>
   <widget class="QLineEdit" name="lineEdit">
    <property name="geometry">

@@ -11,7 +11,7 @@
    </rect>
   </property>
   <property name="windowTitle">
-   <string>v6</string>
+   <string>Тести: квадратні рівняння</string>
   </property>
   <widget class="QLabel" name="label_6">
    <property name="geometry">

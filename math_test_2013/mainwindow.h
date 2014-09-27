@@ -13,7 +13,7 @@
 #include "nameform.h"
 #include <QtNetwork/QTcpSocket>
 #include <QtNetwork/QAbstractSocket>
-#include "windows.h"
+#include <QHostAddress>
 #include "sharebank.h"
 #include "shareStruct.h"
 
@@ -52,6 +52,7 @@ public slots:
     void err();
     bool getSockState();
     void transmitMark();
+    QString getHost();
     
 private:
     QTcpSocket *client;

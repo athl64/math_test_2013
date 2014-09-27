@@ -16,7 +16,7 @@ var3::var3(QWidget *parent) :
     connect(ui->pushButton_2, SIGNAL(clicked()), this, SLOT(check()));
     connect(ui->pushButton_3, SIGNAL(clicked()), this, SLOT(close()));
     //
-    connect(ui->pushButton_3,SIGNAL(clicked()),parent,SLOT(show()));
+    connect(ui->pushButton_3,SIGNAL(clicked()),parent,SLOT(close()));
     connect(this,SIGNAL(markIsReady()),parent,SLOT(transmitMark()));
 
     ui->lcdNumber->setVisible(false);

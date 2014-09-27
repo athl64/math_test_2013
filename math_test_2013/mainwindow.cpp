@@ -23,7 +23,7 @@ MainWindow::MainWindow(QWidget *parent) :
     connect(client,SIGNAL(readyRead()),this,SLOT(ReadyRead()));
     connect(client,SIGNAL(error(QAbstractSocket::SocketError)),this,SLOT(err()));
 
-    client->connectToHost("127.0.0.1",4455);
+    client->connectToHost(getHost(),4455);
 }
 
 MainWindow::~MainWindow()
@@ -39,6 +39,13 @@ void MainWindow::show_help()
 
 void MainWindow::start_test()
 {
+    if(bank.getData().name == "" || bank.getData().surname == "")
+    {
+        //we do not want to start testing if we do not know who doing it :)
+        show_NameForm();
+        return;
+    }
+    //
     this->hide();
     int c = 0;
     srand(time(0));//important for random number
@@ -108,25 +115,16 @@ void MainWindow::ReadyRead()
 
 void MainWindow::SendToServer(QString in)
 {
-    do
+    if(getSockState())
     {
-        if(getSockState())
-        {
-            qDebug() << "send\n";
-            QByteArray tmp;
-            tmp.clear();
-            tmp.append(in);
-            client->write(tmp);
-            client->flush();
-            qDebug() << "sent array content: " << tmp;
-        }
-        else
-        {
-            qDebug() << "sleep\n";
-            Sleep(3000);
-        }
+        qDebug() << "send\n";
+        QByteArray tmp;
+        tmp.clear();
+        tmp.append(in);
+        client->write(tmp);
+        client->flush();
+        qDebug() << "sent array content: " << tmp;
     }
-    while(!getSockState());
 }
 
 void MainWindow::err()
@@ -143,4 +141,53 @@ void MainWindow::transmitMark()
 {
     SendToServer("<mark>" + QString::number(bank.getMark()) + "</mark>\n");
     SendToServer("<finished>" + QDateTime::currentDateTime().toString("dd.MM.yyyy hh:mm:ss") + "</finished>\n");
+}
+
+QString MainWindow::getHost()
+{
+    QString host = "";
+    QHostAddress hostaddr;
+
+    QFile hostFile("host.con");
+    if(hostFile.exists())
+    {
+        qDebug() << "file exist";
+        if(hostFile.open(QIODevice::ReadOnly | QIODevice::Text))
+        {
+            qDebug() << "server IP loaded";
+            host.append(hostFile.readAll());
+            hostFile.close();
+        }
+        else
+        {
+            qDebug() << "can't open file";
+        }
+    }
+    else
+    {
+        if(hostFile.open(QIODevice::ReadWrite | QIODevice::Truncate | QIODevice::Text))
+        {
+            qDebug() << "file created";
+            QByteArray tmp;
+            tmp.clear();
+            tmp.append("127.0.0.1");
+            hostFile.write(tmp);
+            hostFile.close();
+        }
+        else
+        {
+            qDebug() << "can't open/write/create file";
+        }
+    }
+
+    if(hostaddr.setAddress(host))
+    {
+        return hostaddr.toString();
+    }
+    else
+    {
+        host = "127.0.0.1";
+        return host;
+    }
+
 }

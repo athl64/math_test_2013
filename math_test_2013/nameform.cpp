@@ -7,6 +7,10 @@ NameForm::NameForm(QWidget *parent) :
 {
     ui->setupUi(this);
 
+    ui->lineEdit->setMaxLength(20);
+    ui->lineEdit_2->setMaxLength(20);
+    ui->lineEdit_3->setMaxLength(5);
+
     connect(ui->pushButton,SIGNAL(clicked()),this,SLOT(checkInput()));
 }
 
@@ -25,6 +29,7 @@ bool NameForm::checkInput()
     else
     {
         QMessageBox info;
+        info.setWindowTitle("Увага!");
         info.setText("Перевірте щоб всі поля були заповнені правильно!");
         info.exec();
     }
