@@ -95,7 +95,7 @@ void MainWindow::show_NameForm()
 
 void MainWindow::Connected()
 {
-    qDebug() << "connected\n";
+    qDebug() << "connected to " << client->peerAddress();
     sockConnected = true;
     //client->write("hello from test prog");
 }
