@@ -1,0 +1,194 @@
+@font-face {
+    font-family: Constantine;
+    src: url("fonts/Constantine.ttf");
+    font-weight:400;
+}
+
+@font-face {
+    font-family: beerMoney;
+    src: url("fonts/beer_money.ttf");
+    font-weight:400;
+}
+
+html {
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    width: 100%;
+    min-width: 1000px;
+    height: auto;
+    background: #ffffff;
+    margin: 0px;
+    padding: 0px;
+    text-align: left;
+    font-family: Constantine
+}
+
+div {
+    position: relative;
+    display: block;
+    margin: 0px;
+    padding: 0px;
+    background: transparent;
+    text-align: left;
+    border: 0px;
+    color: #000000;
+}
+
+a {
+    text-decoration: underline;
+    color: #000082;
+    font-family: beerMoney;
+}
+
+a:visited {
+    color: #000082;
+    text-decoration: underline;
+}
+
+a:link {
+    color: #000082;
+    text-decoration: underline;
+}
+a:active {
+    color: #ff0909;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #ff0909;
+    text-decoration: none;
+}
+
+p {
+    text-align: left;
+    font-family: "Times New Roman", Times, serif;
+    margin: 0px;
+    padding: 0px;
+}
+
+.headerTitle {
+    font-size: 40px;
+    color: #000000;
+    text-align: center;
+    margin: 10px;
+}
+
+.headerDescription {
+    font-size: 25px;
+    color: #000000;
+    text-align: center;
+    margin: 5px;
+}
+
+.mainWrapper {
+    width: 100%;
+    text-align: center;
+}
+
+.imagesWrapper {
+    width: 100%;
+    height: auto;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    background: transparent;
+    border: none;
+}
+
+.imageInside {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
+    box-shadow: 0px 2px 20px #6aced0;
+}
+
+.imagesTable {
+    width: 100%;
+    height: auto;
+    display: table;
+    border: none;
+    background: none;
+    margin: 0px;
+    padding: 0px;
+    table-layout: fixed;
+}
+
+.imagesTable tr {
+    margin: 0px;
+    padding: 0px;
+    border: none;
+}
+
+.imagesTable td {
+    width: 16%;
+    margin: 0px;
+    padding: 5px;
+    border: none;
+    overflow: hidden;
+}
+
+.downLinkBlock {
+    display: inline-block;
+    width: 300px;
+    height: 200px;
+    background: transparent;
+    text-align: center;
+    margin: 20px;
+    padding: 0px;
+}
+
+.downLinkBlock > a {
+    font-size: 25px;
+}
+
+.downLinkImage {
+    display: inline-block;
+    width: 128px;
+    height: auto;
+    position: relative;
+    text-align: center;
+    vertical-align: middle;
+}
+
+.selectedRed {
+    color: #df0d12;
+}
+
+#popupDiv {
+    width: 100%;
+    height: 100%;
+    display: none;
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    margin: 0px;
+    padding: 0px;
+    background: rgba(40,40,40,0.8);
+}
+
+#popupImage {
+    width: auto;
+    height: auto;
+    display: block;
+    margin: auto;
+    vertical-align: middle;
+    text-align: center;
+    position: relative;
+}
+.spoilerDiv {
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    position: relative;
+    display: block;
+    margin: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 10px;
+    border: dashed 1px #ee5b9a;
+}

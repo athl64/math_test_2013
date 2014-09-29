@@ -3,11 +3,70 @@
 <html>
 <head>
     <title>Square math tests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <link rel="stylesheet" href="style.css" type="text/css" media="all" />
+    <link rel="icon" type="image/ico" href="favicon.ico" />
+    <script src="scripts/jquery-2.1.1.min.js"></script>
+    <script src="mainScript.js"></script>
 </head>
 
 <body>
 
-testing github index page
+<div class="mainWrapper">
+    <h1 class="headerTitle">Square math tests</h1>
+    <h2 class="headerDescription">Приложение для проведения тестирования по квадратным уравнениям</h2>
+    <div class="spoilerDiv">
+        <p>
+            <b>Общая информация.</b>
+            <br />
+            Предназначение: проведение тестов на ПК на тему квадратных уравнений (школьная программа), задания фиксированы, всего 6 вариантов, после запуска псевдослучайным образом выбирается один.
+            Локализация украинская, создавалась для украинской аудитории.
+        </p>
+    </div>
+    <div class="spoilerDiv">
+        <p>
+            <b>Техническая информация.</b>
+            <br />
+            Тесты состоят из двух частей - самих тестов и сервера для сбора результатов. Оба приложения независимы. Для обмена информацией используется <font class="selectedRed">4455 порт</font>.
+            При запущеном сервере в него будут поступать данные о учениках, времени начала\конца, состоянии и оценках после завершения тестов.
+            Настройка приложений-тестов для нормальной работы сервера сводится к <font class="selectedRed">редактированию файла host.con в директории программы</font> (по умолчанию C:\Program Files\mathTest_square\host.con) с указанием IPv4
+            адреса ПК на котором запущен сервер. В случае отсутствия файла host.con - он генерируется автоматически при каждом запуске приложения-тестов с адресом 127.0.0.1.
+            Так же производится логирование всех действий в файл <font class="selectedRed">log.txt</font> .
+        </p>
+    </div>
+    <div class="spoilerDiv">
+        <p>
+            <b>О разработке.</b>
+            <br />
+            Используется Qt5, в качестве инсталятора выбран Inno Setup. Остальное - в исходниках :) .
+        </p>
+    </div>
+    <div class="imagesWrapper">
+        <table class="imagesTable">
+            <tr>
+                <td><a href="#" onclick="showPreview('images/1.jpg')"><img class="imageInside" src="images/1.jpg" /></a></td>
+                <td><a href="#" onclick="showPreview('images/2.jpg')"><img class="imageInside" src="images/2.jpg" /></a></td>
+                <td><a href="#" onclick="showPreview('images/3.jpg')"><img class="imageInside" src="images/3.jpg" /></a></td>
+                <td><a href="#" onclick="showPreview('images/4.jpg')"><img class="imageInside" src="images/4.jpg" /></a></td>
+                <td><a href="#" onclick="showPreview('images/5.jpg')"><img class="imageInside" src="images/5.jpg" /></a></td>
+                <td><a href="#" onclick="showPreview('images/6.jpg')"><img class="imageInside" src="images/6.jpg" /></a></td>
+            </tr>
+        </table>
+    </div>
+    <div class="imagesWrapper">
+        <div class="downLinkBlock">
+            <a href="setup-squareMathTest.exe"><img class="downLinkImage" src="images/exe.png" />Setup</a>
+            <br />
+            Windows XP/Vista/7/8 (32-bit)
+        </div>
+        <div class="downLinkBlock">
+            <a href="https://github.com/athl64/math_test_2013" target="_blank"><img class="downLinkImage" src="images/git.png" />Source code</a>
+            <br />
+            on Github
+        </div>
+    </div>
+</div>
+<div id="popupDiv" onclick="closePreview()"></div>
 
 </body>
 </html>
